@@ -54,13 +54,17 @@ nav a:hover { color:orange; }
 .hero { padding:100px 20px; text-align:center; }
 .hero h1 { font-size:40px; }
 .supplies {
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* control size here */
   overflow: hidden;
 }
-.supplies-img {
+
+.supplies img {
   width: 100%;
-  height: 300px;
-  display: block;
+  height: 100%;
+  object-fit: cover; /* THIS is the key */
 }
 .btn { background:orange; padding:10px 20px; color:#000; text-decoration:none; display:inline-block; margin:10px; }
 .section { padding:40px 20px; }
