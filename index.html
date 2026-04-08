@@ -9,6 +9,24 @@
 body { margin:0; font-family: Arial, sans-serif; background:#111; color:#fff; }
 header { background:#000; padding:15px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; }
 .name { padding:25px; color:orange; font-weight:bold; font-size:20px; text-align:center;}
+.call-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid white;
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin-left: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.call-box:hover {
+  background: orange;
+  color: black;
+  border-color: orange;
+}
 nav a { color:#fff; margin:0 10px; text-decoration:none; }
 nav a:hover { color:orange; }
 .hero { background:url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0') center/cover; padding:100px 20px; text-align:center; }
@@ -24,7 +42,12 @@ footer { background:#000; padding:20px; font-size:12px; text-align:center;}
 </head>
 
 <body>
-<div class="name">AHZ Projects - Call: 076 874 4984</div>
+<div class="name">
+  AHZ Projects - Call:
+  <a href="tel:0768744984" class="call-box">
+    <i class="fas fa-phone"></i> 076 874 4984
+  </a>
+</div>
 <div class="name">
    <img src="logo.png" alt="AHZ Projects">
 </div>
