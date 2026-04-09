@@ -31,7 +31,6 @@
     <meta http-equiv="Expect-CT" content="max-age=86400, enforce">
     <!-- Language-->
     <link rel="alternate" hreflang="x-default" href="https://moneymystic.codes/">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!--Meta Triggers-->
     <meta name="rating" content="general">
     <meta name="revisit-after" content="3 days">
@@ -44,17 +43,19 @@
     <link rel="preload" href="/css/fontawesome.min.css" as="style">
     <!-- Inline Critical CSS -->
     <!-- Load Non-Critical CSS Asynchronously -->
-    <link rel="stylesheet" href="/css/fontawesome.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/css/brands.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/css/solid.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/fontawesome.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/brands.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/solid.min.css" media="print" onload="this.media='all'">
     <!-- Fallback for older browsers that do not support onload -->
     <noscript>
-        <link rel="stylesheet" href="/css/styles.css">
-        <link rel="stylesheet" href="/css/fontawesome.min.css">
-        <link rel="stylesheet" href="/css/brands.min.css">
-        <link rel="stylesheet" href="/css/solid.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/fontawesome.min.css">
+        <link rel="stylesheet" href="css/brands.min.css">
+        <link rel="stylesheet" href="css/solid.min.css">
     </noscript>
+    <!--
     <script src="js/script.js" defer></script>
+    -->
 <style>
 body { line-height:1.3; margin:0; font-family: Arial, sans-serif; background:#111; color:#fff; }
 header { background:#000; padding:15px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; }
