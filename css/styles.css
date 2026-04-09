@@ -113,6 +113,56 @@ nav a:hover {
   padding: 15px 15px;
 }
 
+/* ===== SOCIAL ICONS ONLY ===== */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 15px;
+}
+
+/* ICON BUTTONS */
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #222;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* ICON SIZE */
+.social-icons i {
+  font-size: 22px;
+  color: white;
+}
+
+/* HOVER EFFECT */
+.social-icons a:hover {
+  background: orange;
+}
+
+.social-icons a:hover i {
+  color: black;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+  }
+
+  .social-icons i {
+    font-size: 20px;
+  }
+}
+
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
