@@ -119,8 +119,8 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 15px;
+  gap: 30px;
+  padding: 20px;
 }
 
 /* ICON BUTTONS */
@@ -128,8 +128,8 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   background: #222;
   border-radius: 50%;
   text-decoration: none;
@@ -138,13 +138,13 @@ nav a:hover {
 
 /* ICON SIZE */
 .social-icons i {
-  font-size: 22px;
-  color: white;
+  font-size: 28px;
+  color: orange;
 }
 
 /* HOVER EFFECT */
 .social-icons a:hover {
-  background: orange;
+  background: blue;
 }
 
 .social-icons a:hover i {
