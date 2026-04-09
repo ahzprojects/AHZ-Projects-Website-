@@ -123,7 +123,7 @@ nav a:hover {
   padding: 20px;
 }
 
-/* ICON BUTTONS */
+/* REMOVE DEFAULT LINK BLUE */
 .social-icons a {
   display: flex;
   justify-content: center;
@@ -134,32 +134,30 @@ nav a:hover {
   border-radius: 50%;
   text-decoration: none;
   transition: 0.3s;
+  color: orange; /* 👈 IMPORTANT */
 }
 
 /* ICON SIZE */
 .social-icons i {
-  font-size: 28px;
-  color: orange;
+  font-size: 30px; /* slightly bigger */
+  color: inherit; /* 👈 follows parent color */
 }
 
 /* HOVER EFFECT */
 .social-icons a:hover {
-  background: blue;
-}
-
-.social-icons a:hover i {
-  color: black;
+  background: #111;
+  color: blue; /* 👈 icon turns blue */
 }
 
 /* MOBILE */
 @media (max-width: 480px) {
   .social-icons a {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
   }
 
   .social-icons i {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
