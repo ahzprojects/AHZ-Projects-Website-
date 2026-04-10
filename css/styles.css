@@ -209,10 +209,9 @@ footer {
     position: relative;
     overflow: hidden;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgb(0 0 0 / 0.15);
-    background: #fff; /* helps border pop */
 }
 
 .carousel-track-container {
