@@ -1,53 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ==== CAROUSEL ====
+
   const track = document.querySelector('.carousel-track');
+  if (!track) return; // safety check
+
   const slides = Array.from(track.children);
   const nextButton = document.querySelector('.carousel-button-right');
   const prevButton = document.querySelector('.carousel-button-left');
+
   let currentIndex = 0;
   let autoScrollInterval;
   let isInView = false;
 
-  if (slides.length > 0) {
-    const slideWidth = slides[0].getBoundingClientRect().width;
+  const updateSlide = () => {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  };
 
-    slides.forEach((slide, index) => {
-      slide.style.left = `${slideWidth * index}px`;
-    });
+  const moveNext = () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlide();
+  };
 
-    const moveToSlide = (targetSlide) => {
-      track.style.transform = `translateX(-${targetSlide.style.left})`;
-    };
+  const movePrev = () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlide();
+  };
 
-    const updateSlide = (direction) => {
-      currentIndex = (currentIndex + direction + slides.length) % slides.length;
-      moveToSlide(slides[currentIndex]);
-    };
+  nextButton?.addEventListener('click', moveNext);
+  prevButton?.addEventListener('click', movePrev);
 
-    nextButton.addEventListener('click', () => updateSlide(1));
-    prevButton.addEventListener('click', () => updateSlide(-1));
+  // ✅ Auto-scroll
+  const startAutoScroll = () => {
+    stopAutoScroll(); // prevent stacking
+    autoScrollInterval = setInterval(() => {
+      if (isInView) moveNext();
+    }, 3000);
+  };
 
-    const autoScroll = () => {
-      autoScrollInterval = setInterval(() => {
-        if (isInView) {
-          updateSlide(1);
-        }
-      }, 3000);
-    };
-
-    const stopAutoScroll = () => {
+  const stopAutoScroll = () => {
+    if (autoScrollInterval) {
       clearInterval(autoScrollInterval);
-    };
+    }
+  };
 
-    const checkIfInView = () => {
-      const rect = track.getBoundingClientRect();
-      isInView = rect.top < window.innerHeight && rect.bottom > 0;
-    };
+  // ✅ Check if visible
+  const checkIfInView = () => {
+    const rect = track.getBoundingClientRect();
+    isInView = rect.top < window.innerHeight && rect.bottom > 0;
+  };
 
-    document.addEventListener('scroll', checkIfInView);
-    window.addEventListener('resize', checkIfInView);
+  document.addEventListener('scroll', checkIfInView);
+  window.addEventListener('resize', checkIfInView);
 
-    checkIfInView();
-    autoScroll();
-  }
+  checkIfInView();
+  startAutoScroll();
+
 });
