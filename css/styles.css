@@ -103,20 +103,13 @@ nav a:hover {
 
 .btn {
   background: orange;
-  border: 5px solid white;
-  border-radius: 20px;
-  text-decoration: none;
-  padding: 10px 10px;
-  color: #000;
-  display: inline-block;
-  margin: 5px;
-}
-
-.btn1 {
-  border: 2px solid white;
-  border-radius: 20px;
+  border: 3px solid white;
+  border-radius: 10px;
   text-decoration: none;
   padding: 5px 5px;
+  color: #000;
+  display: inline-block;
+  margin: 1px;
 }
 
 .section {
