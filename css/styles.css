@@ -107,9 +107,16 @@ nav a:hover {
   border-radius: 20px;
   text-decoration: none;
   padding: 10px 10px;
-  color: 000#;
+  color: #000;
   display: inline-block;
   margin: 5px;
+}
+
+.btn1 {
+  border: 2px solid white;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px 5px;
 }
 
 .section {
