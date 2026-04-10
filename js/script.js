@@ -50,44 +50,4 @@ document.addEventListener('DOMContentLoaded', () => {
     checkIfInView();
     autoScroll();
   }
-
-  // ==== COUNTDOWN TIMER ====
-  const countdownElement = document.getElementById('timer');
-
-  if (countdownElement) {
-    const getTargetDate = () => {
-      let targetDate = localStorage.getItem('countdownTargetDate');
-      if (!targetDate) {
-        const now = new Date();
-        targetDate = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000).getTime();
-        localStorage.setItem('countdownTargetDate', targetDate);
-      } else {
-        targetDate = parseInt(targetDate, 10);
-      }
-      return targetDate;
-    };
-
-    const targetDate = getTargetDate();
-
-    const updateCountdown = () => {
-      const currentTime = new Date().getTime();
-      const distance = targetDate - currentTime;
-
-      if (distance <= 0) {
-        countdownElement.textContent = 'EXPIRED';
-        clearInterval(countdownInterval);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
-
-    const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initial call to avoid delay
-  }
 });
