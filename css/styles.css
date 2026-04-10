@@ -208,7 +208,8 @@ footer {
 .carousel {
     position: relative;
     overflow: hidden;
-    width: 100%;
+    width: 90%;
+    max-width: 900px; 
     margin-top: 5px;
     border-radius: 12px;
     box-shadow: 0 6px 16px rgb(0 0 0 / 0.15);
